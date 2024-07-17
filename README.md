@@ -10,24 +10,22 @@ The following example demonstrates the following:
 
 1.	How to build a data model for application business entities and security policies with EF Core.
 2.	How to securely load data from OData endpoints to a WinForms UI client using the [DevExpress WinForms Data Grid](https://www.devexpress.com/products/net/controls/winforms/grid/) control.
-3.	How to activate authentication and authorization for the WinForms application using custom Web API endpoints.
+3.	How to activate authentication and authorization for the WinForms application using custom Web API endpoints (powered by the [DevExpress Backend Web API Service](https://docs.devexpress.com/eXpressAppFramework/403394/backend-web-api-service)).
 4.	How to create a login form and customize its user interface elements based on access permissions.
 
 ## Getting Started
 
-1.	Open *WebApiExampleAll.sln*.
-2.	[Register a DevExpress NuGet feed](https://docs.devexpress.com/GeneralInformation/116698/nuget/setup-visual-studios-nuget-package-manager) in the Visual Studio IDE. Skip this step if you have already registered the DevExpress NuGet feed.
-3.	Restore NuGet packages in the solution:
+1.	Open *WebApiExampleAll.sln*. [Register a DevExpress NuGet feed](https://docs.devexpress.com/GeneralInformation/116698/nuget/setup-visual-studios-nuget-package-manager) in the Visual Studio IDE. Skip this step if you have already registered the DevExpress NuGet feed.
+2.	Restore NuGet packages in the solution:
 
     ![Restore NuGet Packages in the Solution](restore-nuget-packages.png)
-4.	Run the **OData.Server** project. Right-click OData.Server in the Solution Explorer and select **Debug** | **Start New Instance** in the menu. Your default web browser will open. Starting the Web API server for the first time can take up to 20 seconds.
+3.	Run the **OData.Server** project. Right-click OData.Server in the Solution Explorer and select **Debug** | **Start New Instance** in the menu. Your default web browser will open. Starting the Web API server for the first time can take up to 20 seconds.
     
     > **IMPORTANT**
     > 
     > Do not close the web browser.
-5.	Run the **WinForms.Client** project. Right-click OData.Server in the Solution Explorer and select **Debug** | **Start New Instance** in the menu.
-6.	Click "Log in" to proceed. The password for **Admin** and **User** accounts is "QQQ".
-7.	You can sort, filter, and group grid rows (records) as needed. Double-click a grid row to open the edit form and modify cell values:
+4.	Run the **WinForms.Client** project. Right-click OData.Server in the Solution Explorer and select **Debug** | **Start New Instance** in the menu.
+5.	Click "Log in" to proceed. The password for **Admin** and **User** accounts is "QQQ". You can sort, filter, and group grid rows (records) as needed. Double-click a grid row to open the edit form and modify cell values:
     
     ![DevExpress WinForms Client Application](winforms-client-app.gif)
 
