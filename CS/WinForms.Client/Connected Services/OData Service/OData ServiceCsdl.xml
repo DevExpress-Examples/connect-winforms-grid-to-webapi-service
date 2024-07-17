@@ -1,0 +1,224 @@
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:DataServices>
+    <Schema Namespace="DevExpress.Persistent.Base" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityType Name="SecuredActionDescriptor">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+        <Property Name="Image" Type="Edm.Binary" />
+      </EntityType>
+      <EnumType Name="SecurityPermissionPolicy">
+        <Member Name="DenyAllByDefault" Value="0" />
+        <Member Name="ReadOnlyAllByDefault" Value="1" />
+        <Member Name="AllowAllByDefault" Value="2" />
+      </EnumType>
+      <EnumType Name="SecurityPermissionState">
+        <Member Name="Deny" Value="0" />
+        <Member Name="Allow" Value="1" />
+      </EnumType>
+    </Schema>
+    <Schema Namespace="DevExpress.ExpressApp.SystemModule" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityType Name="DashboardViewItemDescriptor">
+        <Key>
+          <PropertyRef Name="ViewId" />
+        </Key>
+        <Property Name="ViewId" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="DashboardOrganizationItem" BaseType="DevExpress.ExpressApp.NonPersistentLiteObject" Abstract="true">
+        <Property Name="Visibility" Type="DevExpress.ExpressApp.Editors.ViewItemVisibility" Nullable="false" />
+      </EntityType>
+      <EntityType Name="DashboardOrganizationItem_1OfIModelDashboardViewItem" BaseType="DevExpress.ExpressApp.SystemModule.DashboardOrganizationItem" Abstract="true" />
+      <EntityType Name="ViewDashboardOrganizationItem" BaseType="DevExpress.ExpressApp.SystemModule.DashboardOrganizationItem_1OfIModelDashboardViewItem">
+        <Property Name="ObjectType" Type="System.Type" />
+        <Property Name="Criteria" Type="Edm.String" />
+        <Property Name="ActionsToolbarVisibility" Type="DevExpress.ExpressApp.Templates.ActionsToolbarVisibility" Nullable="false" />
+        <NavigationProperty Name="AvailableViews" Type="Collection(DevExpress.ExpressApp.SystemModule.DashboardViewItemDescriptor)" />
+        <NavigationProperty Name="ViewDescriptor" Type="DevExpress.ExpressApp.SystemModule.DashboardViewItemDescriptor" />
+      </EntityType>
+      <EntityType Name="DashboardOrganizationItem_1OfIModelStaticText" BaseType="DevExpress.ExpressApp.SystemModule.DashboardOrganizationItem" Abstract="true" />
+      <EntityType Name="StaticTextDashboardOrganizationItem" BaseType="DevExpress.ExpressApp.SystemModule.DashboardOrganizationItem_1OfIModelStaticText">
+        <Property Name="Text" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="DashboardOrganizationItem_1OfIModelStaticImage" BaseType="DevExpress.ExpressApp.SystemModule.DashboardOrganizationItem" Abstract="true" />
+      <EntityType Name="StaticImageDashboardOrganizationItem" BaseType="DevExpress.ExpressApp.SystemModule.DashboardOrganizationItem_1OfIModelStaticImage">
+        <Property Name="ImageName" Type="Edm.String" />
+        <Property Name="SvgImageWidth" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SvgImageHeight" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Preview" Type="Edm.Binary" />
+      </EntityType>
+      <EntityType Name="DashboardOrganizationItem_1OfIModelActionContainerViewItem" BaseType="DevExpress.ExpressApp.SystemModule.DashboardOrganizationItem" Abstract="true" />
+      <EntityType Name="ActionContainerDashboardOrganizationItem" BaseType="DevExpress.ExpressApp.SystemModule.DashboardOrganizationItem_1OfIModelActionContainerViewItem">
+        <NavigationProperty Name="ActionContainer" Type="DevExpress.ExpressApp.SystemModule.ActionContainerDescriptor" />
+        <NavigationProperty Name="ActionContainers" Type="Collection(DevExpress.ExpressApp.SystemModule.ActionContainerDescriptor)" />
+      </EntityType>
+      <EntityType Name="ActionContainerDescriptor">
+        <Key>
+          <PropertyRef Name="ActionContainerId" />
+        </Key>
+        <Property Name="ActionContainerId" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="DashboardName">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Int64" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="DevExpress.ExpressApp" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityType Name="NonPersistentLiteObject" Abstract="true">
+        <Key>
+          <PropertyRef Name="Oid" />
+        </Key>
+        <Property Name="Oid" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+      <EntityType Name="NonPersistentBaseObject" Abstract="true">
+        <Key>
+          <PropertyRef Name="Oid" />
+        </Key>
+        <Property Name="Oid" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="DevExpress.ExpressApp.SystemModule.Notifications" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityType Name="PostponeTime">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="DevExpress.ExpressApp.Security" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityType Name="ProceedMember" BaseType="DevExpress.ExpressApp.NonPersistentBaseObject">
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Caption" Type="Edm.String" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="DevExpress.Persistent.BaseImpl.EF" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityType Name="BaseObject" Abstract="true">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="DevExpress.Persistent.BaseImpl.EF.PermissionPolicy" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityType Name="PermissionPolicyActionPermissionObject" BaseType="DevExpress.Persistent.BaseImpl.EF.BaseObject">
+        <Property Name="ActionId" Type="Edm.String" />
+        <NavigationProperty Name="Role" Type="DevExpress.Persistent.BaseImpl.EF.PermissionPolicy.PermissionPolicyRoleBase" />
+      </EntityType>
+      <EntityType Name="PermissionPolicyRoleBase" BaseType="DevExpress.Persistent.BaseImpl.EF.BaseObject">
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="IsAdministrative" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="CanEditModel" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="PermissionPolicy" Type="DevExpress.Persistent.Base.SecurityPermissionPolicy" Nullable="false" />
+        <Property Name="IsAllowPermissionPriority" Type="Edm.Boolean" DefaultValue="False" Nullable="false" />
+        <NavigationProperty Name="TypePermissions" Type="Collection(DevExpress.Persistent.BaseImpl.EF.PermissionPolicy.PermissionPolicyTypePermissionObject)" />
+        <NavigationProperty Name="NavigationPermissions" Type="Collection(DevExpress.Persistent.BaseImpl.EF.PermissionPolicy.PermissionPolicyNavigationPermissionObject)" />
+        <NavigationProperty Name="ActionPermissions" Type="Collection(DevExpress.Persistent.BaseImpl.EF.PermissionPolicy.PermissionPolicyActionPermissionObject)" />
+      </EntityType>
+      <EntityType Name="PermissionPolicyTypePermissionObject" BaseType="DevExpress.Persistent.BaseImpl.EF.BaseObject">
+        <Property Name="TargetTypeFullName" Type="Edm.String" />
+        <Property Name="ReadState" Type="DevExpress.Persistent.Base.SecurityPermissionState" />
+        <Property Name="WriteState" Type="DevExpress.Persistent.Base.SecurityPermissionState" />
+        <Property Name="CreateState" Type="DevExpress.Persistent.Base.SecurityPermissionState" />
+        <Property Name="DeleteState" Type="DevExpress.Persistent.Base.SecurityPermissionState" />
+        <Property Name="NavigateState" Type="DevExpress.Persistent.Base.SecurityPermissionState" />
+        <NavigationProperty Name="Role" Type="DevExpress.Persistent.BaseImpl.EF.PermissionPolicy.PermissionPolicyRoleBase" />
+        <NavigationProperty Name="MemberPermissions" Type="Collection(DevExpress.Persistent.BaseImpl.EF.PermissionPolicy.PermissionPolicyMemberPermissionsObject)" />
+        <NavigationProperty Name="ObjectPermissions" Type="Collection(DevExpress.Persistent.BaseImpl.EF.PermissionPolicy.PermissionPolicyObjectPermissionsObject)" />
+      </EntityType>
+      <EntityType Name="PermissionPolicyMemberPermissionsObject" BaseType="DevExpress.Persistent.BaseImpl.EF.BaseObject">
+        <Property Name="Members" Type="Edm.String" />
+        <Property Name="Criteria" Type="Edm.String" />
+        <Property Name="ReadState" Type="DevExpress.Persistent.Base.SecurityPermissionState" />
+        <Property Name="WriteState" Type="DevExpress.Persistent.Base.SecurityPermissionState" />
+        <NavigationProperty Name="TypePermissionObject" Type="DevExpress.Persistent.BaseImpl.EF.PermissionPolicy.PermissionPolicyTypePermissionObject" />
+      </EntityType>
+      <EntityType Name="PermissionPolicyObjectPermissionsObject" BaseType="DevExpress.Persistent.BaseImpl.EF.BaseObject">
+        <Property Name="Criteria" Type="Edm.String" />
+        <Property Name="ReadState" Type="DevExpress.Persistent.Base.SecurityPermissionState" />
+        <Property Name="WriteState" Type="DevExpress.Persistent.Base.SecurityPermissionState" />
+        <Property Name="DeleteState" Type="DevExpress.Persistent.Base.SecurityPermissionState" />
+        <Property Name="NavigateState" Type="DevExpress.Persistent.Base.SecurityPermissionState" />
+        <NavigationProperty Name="TypePermissionObject" Type="DevExpress.Persistent.BaseImpl.EF.PermissionPolicy.PermissionPolicyTypePermissionObject" />
+      </EntityType>
+      <EntityType Name="PermissionPolicyNavigationPermissionObject" BaseType="DevExpress.Persistent.BaseImpl.EF.BaseObject">
+        <Property Name="ItemPath" Type="Edm.String" />
+        <Property Name="TargetTypeFullName" Type="Edm.String" />
+        <Property Name="NavigateState" Type="DevExpress.Persistent.Base.SecurityPermissionState" />
+        <NavigationProperty Name="Role" Type="DevExpress.Persistent.BaseImpl.EF.PermissionPolicy.PermissionPolicyRoleBase" />
+      </EntityType>
+      <EntityType Name="PermissionPolicyRole" BaseType="DevExpress.Persistent.BaseImpl.EF.PermissionPolicy.PermissionPolicyRoleBase">
+        <NavigationProperty Name="Users" Type="Collection(DevExpress.Persistent.BaseImpl.EF.PermissionPolicy.PermissionPolicyUser)" />
+      </EntityType>
+      <EntityType Name="PermissionPolicyUser" BaseType="DevExpress.Persistent.BaseImpl.EF.BaseObject">
+        <Property Name="UserName" Type="Edm.String" />
+        <Property Name="IsActive" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ChangePasswordOnFirstLogon" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="StoredPassword" Type="Edm.String" />
+        <NavigationProperty Name="Roles" Type="Collection(DevExpress.Persistent.BaseImpl.EF.PermissionPolicy.PermissionPolicyRole)" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="FreeWebApiSecurity.WebApi.BusinessObjects" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityType Name="ApplicationUser" BaseType="DevExpress.Persistent.BaseImpl.EF.PermissionPolicy.PermissionPolicyUser">
+        <Property Name="AccessFailedCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="LockoutEnd" Type="Edm.DateTimeOffset" Nullable="false" />
+        <NavigationProperty Name="UserLogins" Type="Collection(FreeWebApiSecurity.WebApi.BusinessObjects.ApplicationUserLoginInfo)" />
+      </EntityType>
+      <EntityType Name="ApplicationUserLoginInfo">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="LoginProviderName" Type="Edm.String" />
+        <Property Name="ProviderUserKey" Type="Edm.String" />
+        <Property Name="UserForeignKey" Type="Edm.Guid" Nullable="false" />
+        <NavigationProperty Name="User" Type="FreeWebApiSecurity.WebApi.BusinessObjects.ApplicationUser" Nullable="false" />
+      </EntityType>
+      <EntityType Name="OrderItem">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ProductName" Type="Edm.String" />
+        <Property Name="UnitPrice" Type="Edm.Decimal" Nullable="false" Scale="Variable" />
+        <Property Name="Quantity" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Discount" Type="Edm.Single" Nullable="false" />
+        <Property Name="OrderDate" Type="Edm.DateTimeOffset" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="System" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <ComplexType Name="Type" Abstract="true">
+        <Property Name="GenericTypeArguments" Type="Collection(System.Type)" Nullable="false" />
+        <Property Name="CustomAttributes" Type="Collection(System.Reflection.CustomAttributeData)" />
+      </ComplexType>
+    </Schema>
+    <Schema Namespace="System.Reflection" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <ComplexType Name="CustomAttributeData">
+        <Property Name="ConstructorArguments" Type="Collection(System.Reflection.CustomAttributeTypedArgument)" />
+        <Property Name="NamedArguments" Type="Collection(System.Reflection.CustomAttributeNamedArgument)" />
+      </ComplexType>
+      <ComplexType Name="CustomAttributeTypedArgument" />
+      <ComplexType Name="CustomAttributeNamedArgument" />
+    </Schema>
+    <Schema Namespace="DevExpress.ExpressApp.Editors" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EnumType Name="ViewItemVisibility">
+        <Member Name="Hide" Value="0" />
+        <Member Name="ShowEmptySpace" Value="1" />
+        <Member Name="Show" Value="2" />
+      </EnumType>
+    </Schema>
+    <Schema Namespace="DevExpress.ExpressApp.Templates" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EnumType Name="ActionsToolbarVisibility">
+        <Member Name="Default" Value="0" />
+        <Member Name="Show" Value="1" />
+        <Member Name="Hide" Value="2" />
+      </EnumType>
+    </Schema>
+    <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityContainer Name="Container">
+        <EntitySet Name="OrderItem" EntityType="FreeWebApiSecurity.WebApi.BusinessObjects.OrderItem" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

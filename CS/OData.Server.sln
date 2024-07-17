@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OData.Server", "OData.Server\OData.Server.csproj", "{153C5565-042A-4018-8872-EB57681CACEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		EasyTest|Any CPU = EasyTest|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{153C5565-042A-4018-8872-EB57681CACEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{153C5565-042A-4018-8872-EB57681CACEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{153C5565-042A-4018-8872-EB57681CACEF}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{153C5565-042A-4018-8872-EB57681CACEF}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{153C5565-042A-4018-8872-EB57681CACEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{153C5565-042A-4018-8872-EB57681CACEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CDB4E3D8-25C8-4083-AF41-3CECE51E7349}
+	EndGlobalSection
+EndGlobal
