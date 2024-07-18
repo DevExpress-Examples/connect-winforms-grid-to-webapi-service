@@ -30,7 +30,7 @@ The following example demonstrates the following:
     ![DevExpress WinForms Client Application](winforms-client-app.gif)
 
 ## See Also
-
+* [A Related Blog Post (general motivation, future considerations, etc.)](https://community.devexpress.com/blogs/winforms/archive/2024/07/18/winforms-connect-a-net-desktop-client-to-a-secure-backend-with-the-devexpress-web-api-service-ef-core-with-odata.aspx)
 * [JavaScript with DevExtreme + ASP.NET Core Web API/OData App](https://github.com/DevExpress-Examples/XAF_Security_E4908/tree/23.2.4+/EFCore/ASP.NetCore/DevExtreme.OData)
 * [JavaScript with Svelte + ASP.NET Core Web API/OData App](https://github.com/oliversturm/demo-dx-webapi-js/tree/stage-4)
 * [Blazor WebAssembly App](https://github.com/DevExpress-Examples/XAF_Security_E4908/tree/23.2.4%2B/EFCore/ASP.NetCore/Blazor.WebAssembly)
