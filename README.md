@@ -24,7 +24,7 @@ The following example demonstrates the following:
     > **IMPORTANT**
     > 
     > Do not close the web browser.
-4.	Run the **WinForms.Client** project. Right-click OData.Server in the Solution Explorer and select **Debug** | **Start New Instance** in the menu.
+4.	Run the **WinForms.Client** project. Right-click WinForms.Client in the Solution Explorer and select **Debug** | **Start New Instance** in the menu.
 5.	Click "Log in" to proceed. The password for **Admin** and **User** accounts is "QQQ". You can sort, filter, and group grid rows (records) as needed. Double-click a grid row to open the edit form and modify cell values:
     
     ![DevExpress WinForms Client Application](winforms-client-app.gif)
