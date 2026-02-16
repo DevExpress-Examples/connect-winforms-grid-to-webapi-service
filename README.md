@@ -36,7 +36,7 @@ The following example demonstrates the following:
 * [Blazor WebAssembly App](https://github.com/DevExpress-Examples/XAF_Security_E4908/tree/23.2.4%2B/EFCore/ASP.NetCore/Blazor.WebAssembly)
 * [.NET MAUI (iOS/Android) App](https://github.com/DevExpress-Examples/XAF_Security_E4908/tree/23.2.4%2B/EFCore/MAUI)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=connect-winforms-grid-to-webapi-service&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=connect-winforms-grid-to-webapi-service&~~~was_helpful=no)
 
